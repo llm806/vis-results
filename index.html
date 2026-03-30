@@ -1,42 +1,57 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>vis results</title>
-  <style>
-    body {
-      text-align: center;
-      font-family: Arial, sans-serif;
-    }
-    .figure {
-      margin-bottom: 50px;  /* 每张图之间间隔 */
-    }
-    .title {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    img {
-      max-width: 80%;
-      height: auto;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Vis Results</title>
+<style>
+body {
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  color: #000;
+}
+figure {
+  margin: 0 auto 50px auto;
+  max-width: 900px;
+}
+figure img {
+  max-width: 90%;
+  height: auto;
+  margin-bottom: 15px;
+}
+figcaption {
+  font-size: 20px;
+  line-height: 1.6;
+  text-align: justify;
+  width: 90%;
+  margin: 0 auto;
+}
+figcaption strong {
+  font-weight: bold;
+}
+</style>
 </head>
-
 <body>
 
-<div class="figure">
-  <div class="title">Fig 1. TCR Attention on Sensory Evidence</div>
-  <img src="fig1.png">
-</div>
+<figure>
+  <img src="fig_a1.png" alt="TCR Attention on Sensory Evidence">
+  <figcaption>
+    <strong>Figure a1.</strong> The TCR Attention on Sensory Evidence demonstrates that our TCR module does not hallucinate features. Instead, it grounds its spatial reasoning on actual sensory evidence from the surrounding visible environment to reason about occluded regions. For example in Fig. a1, when the target object is completely invisible, the TCR attention does not fall on the empty space of the GT Box (Occluded Target). Instead, it relies on actual sensory evidence, focusing primarily on the features of the visible surrounding object layouts.
+  </figcaption>
+</figure>
 
-<div class="figure">
-  <div class="title">Fig 2. SSF Spatio-Semantic Focusing Map</div>
-  <img src="fig2.png">
-</div>
+<figure>
+  <img src="fig_a2.png" alt="SSF Spatio-Semantic Focusing Map">
+  <figcaption>
+    <strong>Figure a2.</strong> The SSF Spatio-Semantic Focusing Maps demonstrate that by leveraging text-conditioned contextual priors, the model effectively filters out distant background noise. For example in Fig. a2, the SSF module successfully focuses on the objects surrounding the GT box (occluded target), resulting in significantly stronger activation in this area, as attention concentrates on the target region and context objects.
+  </figcaption>
+</figure>
 
-<div class="figure">
-  <div class="title">Fig 3. Model Predicted Heatmap</div>
-  <img src="fig3.png">
-</div>
+<figure>
+  <img src="fig_a3.png" alt="Model Predicted Heatmap">
+  <figcaption>
+    <strong>Figure a3.</strong> The predicted heatmap comparisons show that the Co3DVG-V without TCR module yields blurry and ambiguous predictions under severe occlusion, while Co3DVG-TCR generates sharper and more deterministic confidence distributions. For example in Fig. a3, Co3DVG-V fails to localize the target, while Co3DVG-TCR successfully localizes the target, and its predictions closely align with the cooperative upper-bound Co3DVG-C, even when the target has minimal geometric evidence.
+  </figcaption>
+</figure>
 
 </body>
 </html>
